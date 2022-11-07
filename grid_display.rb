@@ -4,11 +4,16 @@
 class GridDisplay
   attr_accessor :filling, :row_size, :collum_size
 
-  def initialize(filling, grid = [3, 3])
-    @filling = filling
-    self.row_size = grid[0]
-    self.collum_size = grid [1]
+  def initialize(game_obj)
+    self.filling = game_obj.filling
+    self.row_size = game_obj.grid[0]
+    self.collum_size = game_obj.grid[1]
   end
+  # def initialize(filling, grid = [3, 3])
+  #   self.filling = filling
+  #   self.row_size = grid[0]
+  #   self.collum_size = grid [1]
+  # end
 
   def display
     choped_filling = filling
