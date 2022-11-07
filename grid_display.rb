@@ -1,14 +1,15 @@
 # frozen_string_literal: true
 
 # displays grid with cordenates and filling
-class Grid
-  attr_reader :row_size, :collum_size
-  attr_accessor :filling
+class GridDisplay
+  attr_accessor :filling, :row_size, :collum_size
 
-  def initialize(filling, row_size = 3, collum_size = 3)
+  def initialize(filling, grid = [3, 3])
     @filling = filling
-    @row_size = row_size
-    @collum_size = collum_size
+    self.row_size = grid[0]
+    self.collum_size = grid [1]
+    # @row_size = row_size
+    # @collum_size = collum_size
   end
 
   def display
