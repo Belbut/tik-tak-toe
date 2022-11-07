@@ -8,8 +8,6 @@ class GridDisplay
     @filling = filling
     self.row_size = grid[0]
     self.collum_size = grid [1]
-    # @row_size = row_size
-    # @collum_size = collum_size
   end
 
   def display
