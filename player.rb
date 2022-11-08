@@ -2,7 +2,7 @@
 
 # Creates the played for tik tak toe game
 class Player
-  attr_reader :symbol, :name
+  attr_reader :symbol, :name, :is_human
 
   def initialize(player_number, game_object)
     @is_human = player?(player_number)
@@ -19,7 +19,7 @@ class Player
       @name = 'Computer'
       false
     else
-      @name = name
+      @name = name_inputed
       true
     end
   end
