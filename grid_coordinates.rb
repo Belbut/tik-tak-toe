@@ -23,6 +23,7 @@ module GridCoordinates
   # If coordinate doesn't exist in array then will return: -1
   def index_of_coordinate(coordinate, list_of_coordenates)
     result = list_of_coordenates.index(coordinate)
-    result - 1 if result.nil?
+    result = -1 if result.nil?
+    result
   end
 end
