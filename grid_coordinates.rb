@@ -6,7 +6,7 @@ module GridCoordinates
     row_size = grid_size[0]
     collum_size = grid_size[1]
 
-    letter_coordinate = (65..(64 + collum_size)).map(:chr)
+    letter_coordinate = (65..(64 + collum_size)).map(&:chr)
     number_coordinate = (1..row_size)
 
     number_coordinate.each do |n|
@@ -14,6 +14,7 @@ module GridCoordinates
         result.append("#{l}#{n}")
       end
     end
+    result
   end
 
   # Will return the index of the coordinate
