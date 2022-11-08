@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# frozen_string_literal: false
 
 # displays grid with cordenates and filling
 class GridDisplay
@@ -11,7 +11,7 @@ class GridDisplay
   end
 
   def display
-    choped_filling = filling
+    choped_filling = filling.dup
     collum_legend = '   '
     (65..(64 + collum_size)).each { |i| collum_legend += "#{i.chr}   " }
 
