@@ -6,7 +6,7 @@ class Player
 
   def initialize(player_number, game_object)
     @is_human = player?(player_number)
-    @symbol = game_object.symbol.shift
+    @symbol = game_object.symbol[player_number -1]
     puts "Player #{player_number} created, it's #{@is_human ? 'Human' : 'Computer'}, and is playing with #{symbol}"
   end
 

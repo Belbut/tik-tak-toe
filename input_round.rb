@@ -5,7 +5,7 @@ module InputRound
   include GridCoordinates
 
   # Checks if input of player is valid, and if it wasn't played before
-  def valid_input?(input_coordinate, game_obj)
+  def valid_input?(input_coordinate, game_obj, needs_print = true)
     index = index_of_coordinate(input_coordinate, game_obj.coordinates)
     if index.negative?
       puts "Invalid input '#{input_coordinate}' please try again:"
@@ -13,7 +13,7 @@ module InputRound
     end
 
     if game_obj.filling[index] != '_'
-      puts "The house '#{input_coordinate}' is alredy filled please try another"
+      puts "The house '#{input_coordinate}' is alredy filled please try another" if needs_print
       return false
     end
     true
@@ -30,7 +30,10 @@ module InputRound
     else
       loop do
         choise = coordinates.sample
-        break if valid_input?(choise, self)
+        if valid_input?(choise, self, false)
+          puts "Computer choses:#{choise}"
+          break
+        end
       end
     end
     index = index_of_coordinate(choise, coordinates)

@@ -1,6 +1,6 @@
 # Winning combinations and requirements
 module Winnable
-  def winner_combination(filling, grid_size, goal_number_in_line)
+  def all_possible_winner_situations(filling, grid_size, goal_number_in_line)
     rows = array_to_matrix(filling, grid_size)
     collums = rows.transpose
     diagonals = all_diagonals(rows)
@@ -41,12 +41,23 @@ module Winnable
   def diagonals_315_deg(matrix)
     arr = diagonals_45_deg(matrix.reverse)
 
-    arry_left_to_right = []   # not needed but for easyer left to right reading
+    arry_left_to_right = [] # not needed but for easyer left to right reading
     arr.each { |diagonal| arry_left_to_right.append(diagonal.reverse) }
     arry_left_to_right
   end
 
   def all_diagonals(matrix)
     diagonals_45_deg(matrix) + diagonals_315_deg(matrix)
+  end
+
+  # return the symbol of the winner combination
+  # if no winner  return false
+  def winner_symbol(all_combinations)
+    winner_combination = all_combinations.filter do |combination|
+      combination.count('o') == combination.size or combination.count('x') == combination.size
+    end
+    return false if winner_combination.empty?
+
+    winner_combination[0][0]
   end
 end

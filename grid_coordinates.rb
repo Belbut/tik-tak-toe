@@ -28,7 +28,7 @@ module GridCoordinates
   end
 
   def array_to_matrix(array, grid_size)
-    row_size = grid_size[0]
+    # row_size = grid_size[0]
     collum_size = grid_size[1]
 
     array.each_slice(collum_size).to_a
