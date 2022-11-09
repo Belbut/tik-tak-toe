@@ -48,5 +48,5 @@ class Game
 a = Game.new
 
 
-b = %w[A1 B1 C1 A2 B2 C2 A3 B3 C3 A4 B4 C4]
+b = %w[A1 B1 C1 A2 B2 C2 A3 B3 C3]
 p a.winner_combination(b, [3, 3], 3)
